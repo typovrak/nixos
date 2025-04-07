@@ -6,10 +6,15 @@ let
 		ref = "main";
 		rev = "c31ed9a089e92d4af2338e014ea65ce0668fa909";
 	};
+	nixos-zsh = fetchGit {
+		url = "https://github.com/typovrak/nixos-zsh.git";
+		ref = "main";
+	};
 in {
 	imports = [
 		/etc/nixos/hardware-configuration.nix
 		(import "${nixos-projects}/configuration.nix")
+		(import "${nixos-zsh}/configuration.nix")
 	];
 
 	system = {
