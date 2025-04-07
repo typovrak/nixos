@@ -1,8 +1,14 @@
 { config, pkgs, ... }:
 
-{
+let
+	nixos-projects = fetchGit {
+		url = "https://github.com/typovrak/nixos-projects.git";
+		ref = "main";
+	};
+in {
 	imports = [
 		./hardware-configuration.nix
+		(import "${nixos-projects}/configuration.nix")
 	];
 
 	system = {
@@ -31,11 +37,6 @@
 				mkdir -p /home/typovrak/.ssh
 				chown typovrak:users /home/typovrak/.ssh
 				chmod 700 /home/typovrak/.ssh
-			'';
-			projects = ''
-				mkdir -p /home/typovrak/projects
-				chown typovrak:users /home/typovrak/projects
-				chmod 644 /home/typovrak/projects
 			'';
 			gitconfig = ''
 				cat > /home/typovrak/.gitconfig <<EOF
