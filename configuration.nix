@@ -9,25 +9,40 @@ let
 	nixos-zsh = fetchGit {
 		url = "https://github.com/typovrak/nixos-zsh.git";
 		ref = "main";
+		rev = "742fb93491c5dc791978902274bafc941e0e9755";
+	};
+	nixos-bash = fetchGit {
+		url = "https://github.com/typovrak/nixos-bash.git";
+		ref = "main";
+		rev = "f7817282a2a03301d9601b8cddc3c31994f457a9";
+	};
+	nixos-ssh = fetchGit {
+		url = "https://github.com/typovrak/nixos-ssh.git";
+		ref = "main";
+		rev = "141d811fef9ee8b0dffce8a8bceecf6ab2d84e92";
+	};
+	nixos-git = fetchGit {
+		url = "https://github.com/typovrak/nixos-git.git";
+		ref = "main";
+		rev = "827ceec13bbd0a5c4ca3fbf494e9f2db31df8c48";
 	};
 in {
 	imports = [
 		/etc/nixos/hardware-configuration.nix
 		(import "${nixos-projects}/configuration.nix")
 		(import "${nixos-zsh}/configuration.nix")
+		(import "${nixos-bash}/configuration.nix")
+		(import "${nixos-ssh}/configuration.nix")
+		(import "${nixos-git}/configuration.nix")
 	];
 
 	system = {
+		# TODO: add stateVersion on every package
+		# TODO: add beautiful readme.md for every package
 		stateVersion = "24.11";
 		activationScripts = {
 			dotConfig = ''
 				ln -sFf /home/typovrak/nixos-config/.config /home/typovrak/.config
-			'';
-			bash = ''
-				export PATH=${pkgs.coreutils}/bin:$PATH
-				rm -f /bin/bash
-				mkdir -p /bin
-				ln -sF /etc/bin/bash /bin/bash
 			'';
 			flatpak = ''
 				export PATH=${pkgs.flatpak}/bin:${pkgs.coreutils}/bin:${pkgs.util-linux}/bin:$PATH
@@ -38,26 +53,6 @@ in {
 				flatpak install -y flathub org.gimp.GIMP
 				flatpak install -y flathub com.vscodium.codium
 				flatpak install -y flathub org.shotcut.Shotcut
-			'';
-			ssh = ''
-				mkdir -p /home/typovrak/.ssh
-				chown typovrak:users /home/typovrak/.ssh
-				chmod 700 /home/typovrak/.ssh
-			'';
-			gitconfig = ''
-				cat > /home/typovrak/.gitconfig <<EOF
-[user]
-	name = typovrak
-	email = typovrak@gmail.com
-[init]
-	defaultBranch = main
-[pull]
-	rebase = true
-[push]
-	autoSetupRemote = true
-EOF
-				chown typovrak:users /home/typovrak/.gitconfig
-				chmod 644 /home/typovrak/.gitconfig
 			'';
 			gtk = ''
 				mkdir -p /home/typovrak/.config/gtk-3.0
@@ -111,20 +106,19 @@ EOF
 
 	environment = {
 		systemPackages = with pkgs; [
-			git tree man-db
+			tree man-db
 			jq gcc ripgrep fd unzip fuse inxi iw playerctl
 			chromium firefox
 			flatpak
 			docker docker-compose
 			vim neovim tmux
-			lazygit gdu fzf bat htop btop gh
+			gdu fzf bat htop btop gh
 			rpi-imager filezilla gedit screenkey
 			alacritty ghostty maim xclip copyq pavucontrol nautilus gnome-disk-utility brightnessctl
 			neofetch dmenu polybar feh lxappearance sddm gnome-themes-extra yazi cava
 			wireplumber pamixer helvum
 		];
 		etc = {
-			"bin/bash".source = "${pkgs.bash}/bin/bash";
 			"nixos-config-wallpaper".source = pkgs.fetchFromGitHub {
 				owner = "typovrak";
 				repo = "nixos-config-wallpaper";
