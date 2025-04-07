@@ -4,10 +4,11 @@ let
 	nixos-projects = fetchGit {
 		url = "https://github.com/typovrak/nixos-projects.git";
 		ref = "main";
+		rev = "c31ed9a089e92d4af2338e014ea65ce0668fa909";
 	};
 in {
 	imports = [
-		./hardware-configuration.nix
+		/etc/nixos/hardware-configuration.nix
 		(import "${nixos-projects}/configuration.nix")
 	];
 
@@ -53,15 +54,6 @@ EOF
 				chown typovrak:users /home/typovrak/.gitconfig
 				chmod 644 /home/typovrak/.gitconfig
 			'';
-			zsh = ''
-				touch /home/typovrak/.zshrc
-				chown typovrak:users /home/typovrak/.zshrc
-				chmod 644 /home/typovrak/.zshrc
-
-				touch /home/typovrak/.zsh_history
-				chown typovrak:users /home/typovrak/.zsh_history
-				chmod 644 /home/typovrak/.zsh_history
-			'';
 			gtk = ''
 				mkdir -p /home/typovrak/.config/gtk-3.0
 				cat > /home/typovrak/.config/gtk-3.0/settings.ini << EOF
@@ -105,7 +97,6 @@ EOF
 	users.users.typovrak = {
 		isNormalUser = true;
 		description = "typovrak";
-		shell = pkgs.zsh;
 		extraGroups = [
 			"networkmanager"
 			"wheel"
@@ -115,16 +106,16 @@ EOF
 
 	environment = {
 		systemPackages = with pkgs; [
-			git tree man-db openssh
+			git tree man-db
 			jq gcc ripgrep fd unzip fuse inxi iw playerctl
 			chromium firefox
 			flatpak
 			docker docker-compose
-			zsh vim neovim tmux zsh-autosuggestions zsh-syntax-highlighting starship
+			vim neovim tmux
 			lazygit gdu fzf bat htop btop gh
 			rpi-imager filezilla gedit screenkey
 			alacritty ghostty maim xclip copyq pavucontrol nautilus gnome-disk-utility brightnessctl
-			neofetch fastfetch dmenu polybar feh lxappearance sddm gnome-themes-extra yazi cava
+			neofetch dmenu polybar feh lxappearance sddm gnome-themes-extra yazi cava
 			wireplumber pamixer helvum
 		];
 		etc = {
@@ -173,7 +164,6 @@ EOF
 			defaultSession = "none+i3";
 			sddm.enable = true;
 		};
-		openssh.enable = true;
 		pipewire = {
 			enable = true;
 			audio.enable = true;
@@ -189,27 +179,6 @@ EOF
 	};
 
 	programs = {
-		zsh = {
-			enable = true;
-			enableCompletion = true;
-			promptInit = ''
-				autoload -Uz compinit
-				compinit
-
-				source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-				source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-				eval "$(${pkgs.starship}/bin/starship init zsh)"
-
-				if [ -z "$SSH_AUTH_SOCK" ]; then
-					eval "$(${pkgs.openssh}/bin/ssh-agent -s)" &>/dev/null
-				fi
-
-				${pkgs.openssh}/bin/ssh-add ~/.ssh/mscholz-dev_gitlab &>/dev/null
-				${pkgs.openssh}/bin/ssh-add ~/.ssh/typovrak_github &>/dev/null
-
-				fastfetch
-			'';
-		};
 		dconf.enable = true;
 	};
 
