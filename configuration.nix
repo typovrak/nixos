@@ -26,6 +26,11 @@ let
 		ref = "main";
 		rev = "827ceec13bbd0a5c4ca3fbf494e9f2db31df8c48";
 	};
+	nixos-flatpak = fetchGit {
+		url = "https://github.com/typovrak/nixos-flatpak.git";
+		ref = "main";
+		rev = "fc3cca6c395661609b408794e251e26fdb61382a";
+	};
 in {
 	imports = [
 		/etc/nixos/hardware-configuration.nix
@@ -34,25 +39,17 @@ in {
 		(import "${nixos-bash}/configuration.nix")
 		(import "${nixos-ssh}/configuration.nix")
 		(import "${nixos-git}/configuration.nix")
+		(import "${nixos-flatpak}/configuration.nix")
 	];
 
 	system = {
 		# TODO: add stateVersion on every package
 		# TODO: add beautiful readme.md for every package
+		# TODO: replace flathub apps by nix apps perhaps? and install vscode
 		stateVersion = "24.11";
 		activationScripts = {
 			dotConfig = ''
 				ln -sFf /home/typovrak/nixos-config/.config /home/typovrak/.config
-			'';
-			flatpak = ''
-				export PATH=${pkgs.flatpak}/bin:${pkgs.coreutils}/bin:${pkgs.util-linux}/bin:$PATH
-				flatpak install -y flathub md.obsidian.Obsidian
-				flatpak install -y flathub com.slack.Slack
-				flatpak install -y flathub org.videolan.VLC
-				flatpak install -y flathub com.obsproject.Studio
-				flatpak install -y flathub org.gimp.GIMP
-				flatpak install -y flathub com.vscodium.codium
-				flatpak install -y flathub org.shotcut.Shotcut
 			'';
 			gtk = ''
 				mkdir -p /home/typovrak/.config/gtk-3.0
@@ -109,7 +106,6 @@ EOF
 			tree man-db
 			jq gcc ripgrep fd unzip fuse inxi iw playerctl
 			chromium firefox
-			flatpak
 			docker docker-compose
 			vim neovim tmux
 			gdu fzf bat htop btop gh
@@ -135,14 +131,6 @@ EOF
 			noto-fonts-emoji
 			(nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 		];
-	};
-
-	systemd.services.flatpak-repo = {
-    		wantedBy = [ "multi-user.target" ];
-    		path = [ pkgs.flatpak ];
-    		script = ''
-      			flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    		'';
 	};
 
 	hardware.pulseaudio.enable = false;
@@ -174,16 +162,9 @@ EOF
 			wireplumber.enable = true;
 		};
 		printing.enable = true;
-		flatpak.enable = true;
 	};
 
 	programs = {
 		dconf.enable = true;
-	};
-
-	xdg.portal = {
-		enable = true;
-		config.common.default = "gtk";
-		extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 	};
 }
