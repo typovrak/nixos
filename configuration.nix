@@ -4,12 +4,12 @@ let
 	nixos-projects = fetchGit {
 		url = "https://github.com/typovrak/nixos-projects.git";
 		ref = "main";
-		rev = "c31ed9a089e92d4af2338e014ea65ce0668fa909";
+		rev = "b2531655bb149b8e0979216e1e149e7ba0ab00db";
 	};
 	nixos-zsh = fetchGit {
 		url = "https://github.com/typovrak/nixos-zsh.git";
 		ref = "main";
-		rev = "742fb93491c5dc791978902274bafc941e0e9755";
+		rev = "748293d9eae991fe98b0f416f6bb97d6bd6a30e5";
 	};
 	nixos-bash = fetchGit {
 		url = "https://github.com/typovrak/nixos-bash.git";
@@ -24,7 +24,7 @@ let
 	nixos-git = fetchGit {
 		url = "https://github.com/typovrak/nixos-git.git";
 		ref = "main";
-		rev = "5934ed0e49af7f6e03707a19a0a443bd619cfc81";
+		rev = "60a95c95535610e4cbbc847acee6f5df7810cb03";
 	};
 	nixos-flatpak = fetchGit {
 		url = "https://github.com/typovrak/nixos-flatpak.git";
@@ -39,7 +39,7 @@ let
 	nixos-gtk = fetchGit {
 		url = "https://github.com/typovrak/nixos-gtk.git";
 		ref = "main";
-		rev = "5e7741eefa3c4b286a2e3dddcc49f64c23d727b1";
+		rev = "373debf566a6c2f571cc5addbe61b4c5ba3e8e86";
 	};
 	nixos-alacritty = fetchGit {
 		url = "https://github.com/typovrak/nixos-alacritty.git";
@@ -50,6 +50,21 @@ let
 		url = "https://github.com/typovrak/nixos-polybar.git";
 		ref = "main";
 		rev = "705383143f1b49bf21c8ce377a768a753ebc4aee";
+	};
+	nixos-nvim = fetchGit {
+		url = "https://github.com/typovrak/nixos-nvim.git";
+		ref = "main";
+		rev = "0cfa745cff4f86e1b7fd83b67831f3b0709d4740";
+	};
+	nixos-pavucontrol = fetchGit {
+		url = "https://github.com/typovrak/nixos-pavucontrol.git";
+		ref = "main";
+		rev = "b579960557cbb6a9820079e8d9ecfa3c2af03b9b";
+	};
+	nixos-neofetch = fetchGit {
+		url = "https://github.com/typovrak/nixos-neofetch.git";
+		ref = "main";
+		rev = "9e8ab24e28be36eee77d76ecbed0c1450fd61a23";
 	};
 in {
 	imports = [
@@ -64,13 +79,15 @@ in {
 		(import "${nixos-gtk}/configuration.nix")
 		(import "${nixos-alacritty}/configuration.nix")
 		(import "${nixos-polybar}/configuration.nix")
+		(import "${nixos-nvim}/configuration.nix")
+		(import "${nixos-pavucontrol}/configuration.nix")
+		(import "${nixos-neofetch}/configuration.nix")
 	];
 
 	system = {
 		# TODO: add beautiful readme.md for every package
 		# TODO: replace flathub apps by nix apps perhaps? and install vscode
-		# TODO: mettre les bons shebang partout
-		# TODO: mettre les bons droits à chaque dossier créé par root
+		# TODO: séparer gh et git
 		stateVersion = "24.11";
 	};
 
@@ -117,12 +134,13 @@ in {
 			jq gcc ripgrep fd unzip fuse inxi iw playerctl
 			chromium firefox
 			docker docker-compose
-			vim neovim tmux
+			tmux
 			gdu fzf bat htop btop
 			rpi-imager filezilla gedit screenkey
-			ghostty maim xclip copyq pavucontrol nautilus gnome-disk-utility
+			ghostty maim xclip copyq nautilus gnome-disk-utility
 			neofetch dmenu feh sddm yazi cava
 			wireplumber pamixer helvum
+			gh # delete after
 		];
 		etc = {
 			"nixos-config-wallpaper".source = pkgs.fetchFromGitHub {
