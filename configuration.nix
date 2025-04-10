@@ -9,7 +9,7 @@ let
 	nixos-zsh = fetchGit {
 		url = "https://github.com/typovrak/nixos-zsh.git";
 		ref = "main";
-		rev = "748293d9eae991fe98b0f416f6bb97d6bd6a30e5";
+		rev = "37e1626c0d8c2531105866a345b156be8f22004b";
 	};
 	nixos-bash = fetchGit {
 		url = "https://github.com/typovrak/nixos-bash.git";
@@ -49,12 +49,12 @@ let
 	nixos-polybar = fetchGit {
 		url = "https://github.com/typovrak/nixos-polybar.git";
 		ref = "main";
-		rev = "705383143f1b49bf21c8ce377a768a753ebc4aee";
+		rev = "b81cf44e7ff819667872fa0db977f396d4da8916";
 	};
 	nixos-nvim = fetchGit {
 		url = "https://github.com/typovrak/nixos-nvim.git";
 		ref = "main";
-		rev = "0cfa745cff4f86e1b7fd83b67831f3b0709d4740";
+		rev = "9d3a6d855ab048d31a929b82d9143b3e39deaf74";
 	};
 	nixos-pavucontrol = fetchGit {
 		url = "https://github.com/typovrak/nixos-pavucontrol.git";
@@ -65,6 +65,41 @@ let
 		url = "https://github.com/typovrak/nixos-neofetch.git";
 		ref = "main";
 		rev = "9e8ab24e28be36eee77d76ecbed0c1450fd61a23";
+	};
+	nixos-lazygit = fetchGit {
+		url = "https://github.com/typovrak/nixos-lazygit.git";
+		ref = "main";
+		rev = "d148e4e348af575d7a620bf21364de0726c5c1c2";
+	};
+	nixos-gh = fetchGit {
+		url = "https://github.com/typovrak/nixos-gh.git";
+		ref = "main";
+		rev = "99a68f7e648c37a16bbe752e60b41e73cd9c5eec";
+	};
+	nixos-i3lock-color = fetchGit {
+		url = "https://github.com/typovrak/nixos-i3lock-color.git";
+		ref = "main";
+		rev = "65d60e79dd99c08851114bf22648662afac2b983";
+	};
+	nixos-cava = fetchGit {
+		url = "https://github.com/typovrak/nixos-cava.git";
+		ref = "main";
+		rev = "f1833ef0ed0de3f533ba1096b996f3dae37e32b1";
+	};
+	nixos-screenkey = fetchGit {
+		url = "https://github.com/typovrak/nixos-screenkey.git";
+		ref = "main";
+		rev = "3127aeba5890c60cae8a6d3cb0c053d5aae9d611";
+	};
+	nixos-htop = fetchGit {
+		url = "https://github.com/typovrak/nixos-htop.git";
+		ref = "main";
+		rev = "cbaa9131dbaf4e244c0df7b7092b00e110babbe5";
+	};
+	nixos-btop = fetchGit {
+		url = "https://github.com/typovrak/nixos-btop.git";
+		ref = "main";
+		rev = "bcd82eb56ccb1c9035d18cee86820a2875185c88";
 	};
 in {
 	imports = [
@@ -82,12 +117,22 @@ in {
 		(import "${nixos-nvim}/configuration.nix")
 		(import "${nixos-pavucontrol}/configuration.nix")
 		(import "${nixos-neofetch}/configuration.nix")
+		(import "${nixos-lazygit}/configuration.nix")
+		(import "${nixos-gh}/configuration.nix")
+		(import "${nixos-i3lock-color}/configuration.nix")
+		(import "${nixos-cava}/configuration.nix")
+		(import "${nixos-screenkey}/configuration.nix")
+		(import "${nixos-htop}/configuration.nix")
+		(import "${nixos-btop}/configuration.nix")
 	];
 
 	system = {
 		# TODO: add beautiful readme.md for every package
 		# TODO: replace flathub apps by nix apps perhaps? and install vscode
-		# TODO: séparer gh et git
+
+# TODO: reduire la taille de la bordure i3
+# TODO: ajouter stockage polybar
+# TODO: gérer les applications par défaut
 		stateVersion = "24.11";
 	};
 
@@ -135,12 +180,11 @@ in {
 			chromium firefox
 			docker docker-compose
 			tmux
-			gdu fzf bat htop btop
-			rpi-imager filezilla gedit screenkey
+			gdu fzf bat
+			rpi-imager filezilla gedit
 			ghostty maim xclip copyq nautilus gnome-disk-utility
-			neofetch dmenu feh sddm yazi cava
+			dmenu feh sddm yazi
 			wireplumber pamixer helvum
-			gh # delete after
 		];
 		etc = {
 			"nixos-config-wallpaper".source = pkgs.fetchFromGitHub {
