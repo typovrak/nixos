@@ -54,7 +54,7 @@ let
 	nixos-nvim = fetchGit {
 		url = "https://github.com/typovrak/nixos-nvim.git";
 		ref = "main";
-		rev = "9d3a6d855ab048d31a929b82d9143b3e39deaf74";
+		rev = "04c886763f2e1fb1fc1cc6a3ccf53d10f248cc7b";
 	};
 	nixos-pavucontrol = fetchGit {
 		url = "https://github.com/typovrak/nixos-pavucontrol.git";
@@ -162,6 +162,10 @@ in {
 			LC_TIME = "fr_FR.UTF-8";
 		};
 	};
+
+	nix.settings.experimental-features = [
+		"nix-command"
+	];
 
 	users.users.typovrak = {
 		isNormalUser = true;
