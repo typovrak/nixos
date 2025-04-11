@@ -114,7 +114,7 @@ let
 	nixos-ghostty = fetchGit {
 		url = "https://github.com/typovrak/nixos-ghostty.git";
 		ref = "main";
-		rev = "";
+		rev = "cdd77619302d912107d7ab7143b0f2ffc1c3a22f";
 	};
 in {
 	imports = [
