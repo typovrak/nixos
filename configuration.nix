@@ -29,7 +29,7 @@ let
 	nixos-flatpak = fetchGit {
 		url = "https://github.com/typovrak/nixos-flatpak.git";
 		ref = "main";
-		rev = "8bd077cb8ee744d5b20938ff0a2fa0318bd0a4fb";
+		rev = "23a089f07068d75f687a89a8ff28c8a8e063e69e";
 	};
 	nixos-fonts = fetchGit {
 		url = "https://github.com/typovrak/nixos-fonts.git";
@@ -54,7 +54,7 @@ let
 	nixos-nvim = fetchGit {
 		url = "https://github.com/typovrak/nixos-nvim.git";
 		ref = "main";
-		rev = "04c886763f2e1fb1fc1cc6a3ccf53d10f248cc7b";
+		rev = "4942481ac5f275a143f8ddb4dac208f4519d7a81";
 	};
 	nixos-pavucontrol = fetchGit {
 		url = "https://github.com/typovrak/nixos-pavucontrol.git";
@@ -101,6 +101,11 @@ let
 		ref = "main";
 		rev = "bcd82eb56ccb1c9035d18cee86820a2875185c88";
 	};
+	nixos-launchers = fetchGit {
+		url = "https://github.com/typovrak/nixos-launchers.git";
+		ref = "main";
+		rev = "9f9a82987b3cb60d347d7b59b833b61683e6a909";
+	};
 in {
 	imports = [
 		/etc/nixos/hardware-configuration.nix
@@ -124,15 +129,10 @@ in {
 		(import "${nixos-screenkey}/configuration.nix")
 		(import "${nixos-htop}/configuration.nix")
 		(import "${nixos-btop}/configuration.nix")
+		(import "${nixos-launchers}/configuration.nix")
 	];
 
 	system = {
-		# TODO: add beautiful readme.md for every package
-		# TODO: replace flathub apps by nix apps perhaps? and install vscode
-
-# TODO: reduire la taille de la bordure i3
-# TODO: ajouter stockage polybar
-# TODO: gérer les applications par défaut
 		stateVersion = "24.11";
 	};
 
@@ -189,6 +189,7 @@ in {
 			ghostty maim xclip copyq nautilus gnome-disk-utility
 			dmenu feh sddm yazi
 			wireplumber pamixer helvum
+			rnote
 		];
 		etc = {
 			"nixos-config-wallpaper".source = pkgs.fetchFromGitHub {
