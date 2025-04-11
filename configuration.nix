@@ -9,7 +9,7 @@ let
 	nixos-zsh = fetchGit {
 		url = "https://github.com/typovrak/nixos-zsh.git";
 		ref = "main";
-		rev = "37e1626c0d8c2531105866a345b156be8f22004b";
+		rev = "89fa7c235dd10af70e54a30df08c28ada9723d3e";
 	};
 	nixos-bash = fetchGit {
 		url = "https://github.com/typovrak/nixos-bash.git";
@@ -49,7 +49,7 @@ let
 	nixos-polybar = fetchGit {
 		url = "https://github.com/typovrak/nixos-polybar.git";
 		ref = "main";
-		rev = "b81cf44e7ff819667872fa0db977f396d4da8916";
+		rev = "d87c59f97fc31e23ea64d7c5c26e4ae992abfca8";
 	};
 	nixos-nvim = fetchGit {
 		url = "https://github.com/typovrak/nixos-nvim.git";
@@ -106,6 +106,16 @@ let
 		ref = "main";
 		rev = "a7344ff3453d6b79275e8c4dafb1da4882e1bee2";
 	};
+	nixos-yazi = fetchGit {
+		url = "https://github.com/typovrak/nixos-yazi.git";
+		ref = "main";
+		rev = "1e6c592c946b03564c839a2b3d3753b662c9e3c9";
+	};
+	nixos-ghostty = fetchGit {
+		url = "https://github.com/typovrak/nixos-ghostty.git";
+		ref = "main";
+		rev = "";
+	};
 in {
 	imports = [
 		/etc/nixos/hardware-configuration.nix
@@ -130,6 +140,8 @@ in {
 		(import "${nixos-htop}/configuration.nix")
 		(import "${nixos-btop}/configuration.nix")
 		(import "${nixos-launchers}/configuration.nix")
+		(import "${nixos-yazi}/configuration.nix")
+		(import "${nixos-ghostty}/configuration.nix")
 	];
 
 	system = {
@@ -189,8 +201,8 @@ in {
 			tmux
 			gdu fzf bat
 			rpi-imager filezilla gedit
-			ghostty maim xclip copyq nautilus gnome-disk-utility
-			dmenu feh sddm yazi
+			maim xclip copyq nautilus gnome-disk-utility
+			dmenu feh sddm
 			wireplumber pamixer helvum
 			rnote
 			discord
