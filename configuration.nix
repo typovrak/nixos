@@ -29,7 +29,7 @@ let
 	nixos-flatpak = fetchGit {
 		url = "https://github.com/typovrak/nixos-flatpak.git";
 		ref = "main";
-		rev = "23a089f07068d75f687a89a8ff28c8a8e063e69e";
+		rev = "5ec94495641ca2d14f4c434f1a3c9d0cc8b30c3c";
 	};
 	nixos-fonts = fetchGit {
 		url = "https://github.com/typovrak/nixos-fonts.git";
@@ -39,7 +39,7 @@ let
 	nixos-gtk = fetchGit {
 		url = "https://github.com/typovrak/nixos-gtk.git";
 		ref = "main";
-		rev = "edf38a5062c410af44bbd8a68de2f8cb87cd3017";
+		rev = "36f88dfed931b4650b7c5ca332582f26e581d3ce";
 	};
 	nixos-alacritty = fetchGit {
 		url = "https://github.com/typovrak/nixos-alacritty.git";
@@ -104,7 +104,7 @@ let
 	nixos-launchers = fetchGit {
 		url = "https://github.com/typovrak/nixos-launchers.git";
 		ref = "main";
-		rev = "9f9a82987b3cb60d347d7b59b833b61683e6a909";
+		rev = "a7344ff3453d6b79275e8c4dafb1da4882e1bee2";
 	};
 in {
 	imports = [
@@ -165,7 +165,10 @@ in {
 
 	nix.settings.experimental-features = [
 		"nix-command"
+		"flakes"
 	];
+
+	nixpkgs.config.allowUnfree = true;
 
 	users.users.typovrak = {
 		isNormalUser = true;
@@ -190,6 +193,9 @@ in {
 			dmenu feh sddm yazi
 			wireplumber pamixer helvum
 			rnote
+			discord
+			slack
+			vscode
 		];
 		etc = {
 			"nixos-config-wallpaper".source = pkgs.fetchFromGitHub {
