@@ -9,7 +9,7 @@ let
 	nixos-zsh = fetchGit {
 		url = "https://github.com/typovrak/nixos-zsh.git";
 		ref = "main";
-		rev = "89fa7c235dd10af70e54a30df08c28ada9723d3e";
+		rev = "32a869dccbb131cab8e400447b86ad4eb066567e";
 	};
 	nixos-bash = fetchGit {
 		url = "https://github.com/typovrak/nixos-bash.git";
@@ -49,7 +49,7 @@ let
 	nixos-polybar = fetchGit {
 		url = "https://github.com/typovrak/nixos-polybar.git";
 		ref = "main";
-		rev = "d87c59f97fc31e23ea64d7c5c26e4ae992abfca8";
+		rev = "838e730de1b00b17f51978531c77d89f455837e4";
 	};
 	nixos-nvim = fetchGit {
 		url = "https://github.com/typovrak/nixos-nvim.git";
@@ -116,9 +116,30 @@ let
 		ref = "main";
 		rev = "cdd77619302d912107d7ab7143b0f2ffc1c3a22f";
 	};
+	nixos-audio = fetchGit {
+		url = "https://github.com/typovrak/nixos-audio.git";
+		ref = "main";
+		rev = "f7e8f698d349199b9dd5e178b913ed976eda7a24";
+	};
+	nixos-fastfetch = fetchGit {
+		url = "https://github.com/typovrak/nixos-fastfetch.git";
+		ref = "main";
+		rev = "b13cf6af53fd9df69d46ef9f55997e0888ba6fd0";
+	};
+	nixos-locale = fetchGit {
+		url = "https://github.com/typovrak/nixos-locale.git";
+		ref = "main";
+		rev = "40196e5c6b7f24446d057d8ba64d2482ac17be92";
+	};
+	nixos-bat = fetchGit {
+		url = "https://github.com/typovrak/nixos-bat.git";
+		ref = "main";
+		rev = "ad185d8009a2b6eb3c217277422adecd04aa740b";
+	};
 in {
 	imports = [
 		/etc/nixos/hardware-configuration.nix
+		(import "${nixos-locale}/configuration.nix")
 		(import "${nixos-projects}/configuration.nix")
 		(import "${nixos-zsh}/configuration.nix")
 		(import "${nixos-bash}/configuration.nix")
@@ -142,6 +163,9 @@ in {
 		(import "${nixos-launchers}/configuration.nix")
 		(import "${nixos-yazi}/configuration.nix")
 		(import "${nixos-ghostty}/configuration.nix")
+		(import "${nixos-audio}/configuration.nix")
+		(import "${nixos-fastfetch}/configuration.nix")
+		(import "${nixos-bat}/configuration.nix")
 	];
 
 	system = {
@@ -156,23 +180,6 @@ in {
 	networking = {
 		hostName = "typonixos";
 		networkmanager.enable = true;
-	};
-
-	time.timeZone = "Europe/Paris";
-
-	i18n = {
-		defaultLocale = "en_US.UTF-8";
-		extraLocaleSettings = {
-			LC_ADDRESS = "fr_FR.UTF-8";
-			LC_IDENTIFICATION = "fr_FR.UTF-8";
-			LC_MEASUREMENT = "fr_FR.UTF-8";
-			LC_MONETARY = "fr_FR.UTF-8";
-			LC_NAME = "fr_FR.UTF-8";
-			LC_NUMERIC = "fr_FR.UTF-8";
-			LC_PAPER = "fr_FR.UTF-8";
-			LC_TELEPHONE = "fr_FR.UTF-8";
-			LC_TIME = "fr_FR.UTF-8";
-		};
 	};
 
 	nix.settings.experimental-features = [
@@ -199,15 +206,16 @@ in {
 			chromium firefox
 			docker docker-compose
 			tmux
-			gdu fzf bat
+			gdu fzf
 			rpi-imager filezilla gedit
 			maim xclip copyq nautilus gnome-disk-utility
 			dmenu feh sddm
-			wireplumber pamixer helvum
 			rnote
 			discord
 			slack
 			vscode
+			lolcat
+			ascii-image-converter
 		];
 		etc = {
 			"nixos-config-wallpaper".source = pkgs.fetchFromGitHub {
@@ -218,10 +226,6 @@ in {
 			};
 		};
 	};
-
-	hardware.pulseaudio.enable = false;
-
-	security.rtkit.enable = true;
 
 	services = {
 		xserver = {
@@ -236,16 +240,6 @@ in {
 		displayManager = {
 			defaultSession = "none+i3";
 			sddm.enable = true;
-		};
-		pipewire = {
-			enable = true;
-			audio.enable = true;
-			pulse.enable = true;
-			alsa = {
-				enable = true;
-				support32Bit = true;
-			};
-			wireplumber.enable = true;
 		};
 		printing.enable = true;
 	};
