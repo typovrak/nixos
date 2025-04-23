@@ -139,7 +139,7 @@ let
 	nixos-lightdm = fetchGit {
 		url = "https://github.com/typovrak/nixos-lightdm.git";
 		ref = "main";
-		rev = "37654e5af3ed04a8b7475117a90f2953d5bf9932";
+		rev = "1c3c0e73aa91fa25b27699c70f4fc6f129543761";
 	};
 in {
 	imports = [
@@ -242,6 +242,7 @@ in {
 				layout = "us";
 				variant = "altgr-intl";
 			};
+		};
 		printing.enable = true;
 	};
 }
