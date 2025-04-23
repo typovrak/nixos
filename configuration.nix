@@ -209,13 +209,14 @@ in {
 			gdu fzf
 			rpi-imager filezilla gedit
 			maim xclip copyq nautilus gnome-disk-utility
-			dmenu feh sddm
+			dmenu feh
 			rnote
 			discord
 			slack
 			vscode
 			lolcat
 			ascii-image-converter
+			sddm
 		];
 		etc = {
 			"nixos-config-wallpaper".source = pkgs.fetchFromGitHub {
