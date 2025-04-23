@@ -216,7 +216,11 @@ in {
 			vscode
 			lolcat
 			ascii-image-converter
-			sddm
+			lightdm-gtk-greeter
+			papirus-icon-theme
+			catppuccin-gtk
+			magnetic-catppuccin-gtk
+			gdm-settings
 		];
 		etc = {
 			"nixos-config-wallpaper".source = pkgs.fetchFromGitHub {
@@ -237,10 +241,13 @@ in {
 				layout = "us";
 				variant = "altgr-intl";
 			};
+			displayManager.lightdm = {
+				enable = true;
+				greeters.gtk.enable = true;
+			};
 		};
 		displayManager = {
 			defaultSession = "none+i3";
-			sddm.enable = true;
 		};
 		printing.enable = true;
 	};
