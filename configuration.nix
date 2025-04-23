@@ -136,6 +136,11 @@ let
 		ref = "main";
 		rev = "ad185d8009a2b6eb3c217277422adecd04aa740b";
 	};
+	nixos-lightdm = fetchGit {
+		url = "https://github.com/typovrak/nixos-lightdm.git";
+		ref = "main";
+		rev = "37654e5af3ed04a8b7475117a90f2953d5bf9932";
+	};
 in {
 	imports = [
 		/etc/nixos/hardware-configuration.nix
@@ -166,6 +171,7 @@ in {
 		(import "${nixos-audio}/configuration.nix")
 		(import "${nixos-fastfetch}/configuration.nix")
 		(import "${nixos-bat}/configuration.nix")
+		(import "${nixos-lightdm}/configuration.nix")
 	];
 
 	system = {
@@ -216,12 +222,6 @@ in {
 			vscode
 			lolcat
 			ascii-image-converter
-
-			lightdm-gtk-greeter
-			papirus-icon-theme
-			catppuccin-gtk
-			magnetic-catppuccin-gtk
-			gdm-settings
 		];
 		etc = {
 			"nixos-config-wallpaper".source = pkgs.fetchFromGitHub {
@@ -233,14 +233,6 @@ in {
 		};
 	};
 
-environment.etc."lightdm/lightdm-gtk-greeter.conf".text = lib.mkForce ''
-  [greeter]
-  theme-name = Catppuccin-GTK-Dark
-  icon-theme-name = Papirus-Dark
-  font-name = JetBrainsMono Nerd Font 11
-  background = /etc/nixos-config-wallpaper/nixos-wallpaper-catppuccin-mocha.png
-'';
-
 	services = {
 		xserver = {
 			enable = true;
@@ -250,14 +242,6 @@ environment.etc."lightdm/lightdm-gtk-greeter.conf".text = lib.mkForce ''
 				layout = "us";
 				variant = "altgr-intl";
 			};
-			displayManager.lightdm = {
-				enable = true;
-				greeters.gtk.enable = true;
-			};
-		};
-		displayManager = {
-			defaultSession = "none+i3";
-		};
 		printing.enable = true;
 	};
 }
