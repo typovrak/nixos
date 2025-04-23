@@ -139,7 +139,12 @@ let
 	nixos-lightdm = fetchGit {
 		url = "https://github.com/typovrak/nixos-lightdm.git";
 		ref = "main";
-		rev = "1c3c0e73aa91fa25b27699c70f4fc6f129543761";
+		rev = "afc0be94a6fe39cb2680bacabb4cdad7248cba17";
+	};
+	nixos-i3 = fetchGit {
+		url = "https://github.com/typovrak/nixos-i3.git";
+		ref = "main";
+		rev = "d0d3e3d72f11d3e8d26fe851a42bf974067a7613";
 	};
 in {
 	imports = [
@@ -172,6 +177,7 @@ in {
 		(import "${nixos-fastfetch}/configuration.nix")
 		(import "${nixos-bat}/configuration.nix")
 		(import "${nixos-lightdm}/configuration.nix")
+		(import "${nixos-i3}/configuration.nix")
 	];
 
 	system = {
@@ -215,7 +221,6 @@ in {
 			gdu fzf
 			rpi-imager filezilla gedit
 			maim xclip copyq nautilus gnome-disk-utility
-			dmenu feh
 			rnote
 			discord
 			slack
@@ -233,16 +238,5 @@ in {
 		};
 	};
 
-	services = {
-		xserver = {
-			enable = true;
-			desktopManager.xterm.enable = true;
-			windowManager.i3.enable = true;
-			xkb = {
-				layout = "us";
-				variant = "altgr-intl";
-			};
-		};
-		printing.enable = true;
-	};
+	services.printing.enable = true;
 }
