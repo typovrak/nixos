@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
 	nixos-projects = fetchGit {
@@ -216,6 +216,7 @@ in {
 			vscode
 			lolcat
 			ascii-image-converter
+
 			lightdm-gtk-greeter
 			papirus-icon-theme
 			catppuccin-gtk
@@ -231,6 +232,14 @@ in {
 			};
 		};
 	};
+
+environment.etc."lightdm/lightdm-gtk-greeter.conf".text = lib.mkForce ''
+  [greeter]
+  theme-name = Catppuccin-GTK-Dark
+  icon-theme-name = Papirus-Dark
+  font-name = JetBrainsMono Nerd Font 11
+  background = /etc/nixos-config-wallpaper/nixos-wallpaper-catppuccin-mocha.png
+'';
 
 	services = {
 		xserver = {
