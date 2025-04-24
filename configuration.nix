@@ -29,7 +29,7 @@ let
 	nixos-flatpak = fetchGit {
 		url = "https://github.com/typovrak/nixos-flatpak.git";
 		ref = "main";
-		rev = "b342681ecbf48a17db20149f0ccb723b3251bdf1";
+		rev = "914785e50ebb105527e98708c98a658d2c8de8ea";
 	};
 	nixos-fonts = fetchGit {
 		url = "https://github.com/typovrak/nixos-fonts.git";
@@ -39,7 +39,7 @@ let
 	nixos-gtk = fetchGit {
 		url = "https://github.com/typovrak/nixos-gtk.git";
 		ref = "main";
-		rev = "7de733cc12829fb433ae7e3ff6e12e00a129eff0";
+		rev = "18f360310152d946f9c9d64f80631443f16e501b";
 	};
 	nixos-alacritty = fetchGit {
 		url = "https://github.com/typovrak/nixos-alacritty.git";
@@ -139,7 +139,7 @@ let
 	nixos-lightdm = fetchGit {
 		url = "https://github.com/typovrak/nixos-lightdm.git";
 		ref = "main";
-		rev = "afc0be94a6fe39cb2680bacabb4cdad7248cba17";
+		rev = "a63bd73b594575af7b23489b7372e2a077060e66";
 	};
 	nixos-i3 = fetchGit {
 		url = "https://github.com/typovrak/nixos-i3.git";
