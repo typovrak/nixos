@@ -39,7 +39,7 @@ let
 	nixos-gtk = fetchGit {
 		url = "https://github.com/typovrak/nixos-gtk.git";
 		ref = "main";
-		rev = "18f360310152d946f9c9d64f80631443f16e501b";
+		rev = "c0b57ee832f90e6969ec331bf8d5fe8dedd24d0e";
 	};
 	nixos-alacritty = fetchGit {
 		url = "https://github.com/typovrak/nixos-alacritty.git";
