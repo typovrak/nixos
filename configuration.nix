@@ -39,7 +39,7 @@ let
 	nixos-gtk = fetchGit {
 		url = "https://github.com/typovrak/nixos-gtk.git";
 		ref = "main";
-		rev = "36f88dfed931b4650b7c5ca332582f26e581d3ce";
+		rev = "8f67ab0414ceb33341dd4be4caa79d90c40c5f8e";
 	};
 	nixos-alacritty = fetchGit {
 		url = "https://github.com/typovrak/nixos-alacritty.git";
@@ -49,7 +49,7 @@ let
 	nixos-polybar = fetchGit {
 		url = "https://github.com/typovrak/nixos-polybar.git";
 		ref = "main";
-		rev = "838e730de1b00b17f51978531c77d89f455837e4";
+		rev = "189459e52981ee64d7df46476cc5e5fd00b9a68b";
 	};
 	nixos-nvim = fetchGit {
 		url = "https://github.com/typovrak/nixos-nvim.git";
@@ -144,7 +144,7 @@ let
 	nixos-i3 = fetchGit {
 		url = "https://github.com/typovrak/nixos-i3.git";
 		ref = "main";
-		rev = "d0d3e3d72f11d3e8d26fe851a42bf974067a7613";
+		rev = "057076b9ce9f4cfb4ec7bdd1e254bcd62a0fdd6e";
 	};
 in {
 	imports = [
@@ -213,29 +213,36 @@ in {
 
 	environment = {
 		systemPackages = with pkgs; [
-			tree man-db
-			jq gcc ripgrep fd unzip fuse inxi iw playerctl
-			chromium firefox
-			docker docker-compose
+			tree
+			man-db
+			jq
+			gcc
+			ripgrep
+			fd
+			unzip 
+			fuse
+			inxi
+			chromium
+			firefox
+			docker
+			docker-compose
 			tmux
-			gdu fzf
-			rpi-imager filezilla gedit
-			maim xclip copyq nautilus gnome-disk-utility
-			rnote
-			discord
-			slack
+			gdu
+			fzf
+			rpi-imager
+			filezilla
+			gedit
 			vscode
+			slack
+			discord
+			rnote
+			xclip
+			copyq
+			nautilus
+			gnome-disk-utility
 			lolcat
 			ascii-image-converter
 		];
-		etc = {
-			"nixos-config-wallpaper".source = pkgs.fetchFromGitHub {
-				owner = "typovrak";
-				repo = "nixos-config-wallpaper";
-				rev = "main";
-				sha256 = "sha256-63suKn9oC6fQDrjnSJlG9EW/EFHBh39nfUXWJbRoxgI=";
-			};
-		};
 	};
 
 	services.printing.enable = true;
