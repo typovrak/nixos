@@ -139,7 +139,7 @@ let
 	nixos-lightdm = fetchGit {
 		url = "https://github.com/typovrak/nixos-lightdm.git";
 		ref = "main";
-		rev = "a63bd73b594575af7b23489b7372e2a077060e66";
+		rev = "55ca903d19281f535cf1f64e797b3609ac48c9a1";
 	};
 	nixos-i3 = fetchGit {
 		url = "https://github.com/typovrak/nixos-i3.git";
