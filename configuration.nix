@@ -211,6 +211,8 @@ in {
 		];
 	};
 
+users.groups.mlocate = {};
+
 	environment = {
 		systemPackages = with pkgs; [
 			tree
@@ -242,6 +244,7 @@ in {
 			gnome-disk-utility
 			lolcat
 			ascii-image-converter
+			mlocate
 		];
 	};
 
