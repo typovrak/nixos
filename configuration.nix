@@ -144,7 +144,7 @@ let
 	nixos-i3 = fetchGit {
 		url = "https://github.com/typovrak/nixos-i3.git";
 		ref = "main";
-		rev = "057076b9ce9f4cfb4ec7bdd1e254bcd62a0fdd6e";
+		rev = "5057c410db65655cdbc52478fa0d2afbcfb7491a";
 	};
 in {
 	imports = [
@@ -240,7 +240,6 @@ users.groups.mlocate = {};
 			rnote
 			xclip
 			copyq
-			nautilus
 			gnome-disk-utility
 			lolcat
 			ascii-image-converter
