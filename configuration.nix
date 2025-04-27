@@ -54,7 +54,7 @@ let
   	nixos-nvim = fetchGit {
     	url = "https://github.com/typovrak/nixos-nvim.git";
     	ref = "main";
-    	rev = "785775791bc59f73be68189fb867be82bb821be1";
+    	rev = "d2d642f8fa31a900a25a12a2d0071872289cdd5e";
   	};
   	nixos-pavucontrol = fetchGit {
     	url = "https://github.com/typovrak/nixos-pavucontrol.git";
