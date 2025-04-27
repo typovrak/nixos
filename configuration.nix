@@ -54,7 +54,7 @@ let
 	nixos-nvim = fetchGit {
 		url = "https://github.com/typovrak/nixos-nvim.git";
 		ref = "main";
-		rev = "06a1724793193a48070c4e107803e4fd0afd1f4a";
+		rev = "39bbfdaa5d88954820906df5f01d1dde06c9077b";
 	};
 	nixos-pavucontrol = fetchGit {
 		url = "https://github.com/typovrak/nixos-pavucontrol.git";
@@ -224,6 +224,7 @@ users.groups.mlocate = {};
 			unzip 
 			fuse
 			inxi
+			wget
 			chromium
 			firefox
 			docker
