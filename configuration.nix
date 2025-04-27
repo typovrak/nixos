@@ -49,12 +49,12 @@ let
 	nixos-polybar = fetchGit {
 		url = "https://github.com/typovrak/nixos-polybar.git";
 		ref = "main";
-		rev = "189459e52981ee64d7df46476cc5e5fd00b9a68b";
+		rev = "c12827f9ebc5cc1d784dbc7039daca5ea2ca29b8";
 	};
 	nixos-nvim = fetchGit {
 		url = "https://github.com/typovrak/nixos-nvim.git";
 		ref = "main";
-		rev = "71db7efcd6959b4d42db29ec794f5a6f728a562c";
+		rev = "e3187caa1a694dcdf0f8eda14b968c88620e0fc0";
 	};
 	nixos-pavucontrol = fetchGit {
 		url = "https://github.com/typovrak/nixos-pavucontrol.git";
