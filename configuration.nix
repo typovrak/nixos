@@ -54,7 +54,7 @@ let
 	nixos-nvim = fetchGit {
 		url = "https://github.com/typovrak/nixos-nvim.git";
 		ref = "main";
-		rev = "370dc6f607dea140dd5fef0569b11559e56b09ea";
+		rev = "71db7efcd6959b4d42db29ec794f5a6f728a562c";
 	};
 	nixos-pavucontrol = fetchGit {
 		url = "https://github.com/typovrak/nixos-pavucontrol.git";
@@ -249,8 +249,4 @@ users.groups.mlocate = {};
 	};
 
 	services.printing.enable = true;
-
-	programs.nix-ld = {
-		enable = true;
-	};
 }
