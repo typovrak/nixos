@@ -54,7 +54,7 @@ let
 	nixos-nvim = fetchGit {
 		url = "https://github.com/typovrak/nixos-nvim.git";
 		ref = "main";
-		rev = "e3187caa1a694dcdf0f8eda14b968c88620e0fc0";
+		rev = "0135af48c53791cbc440346ae0c101a9330293e3";
 	};
 	nixos-pavucontrol = fetchGit {
 		url = "https://github.com/typovrak/nixos-pavucontrol.git";
@@ -139,12 +139,17 @@ let
 	nixos-lightdm = fetchGit {
 		url = "https://github.com/typovrak/nixos-lightdm.git";
 		ref = "main";
-		rev = "55ca903d19281f535cf1f64e797b3609ac48c9a1";
+		rev = "0b04a56564ea375058c42f2305f579e1eb546c62";
 	};
 	nixos-i3 = fetchGit {
 		url = "https://github.com/typovrak/nixos-i3.git";
 		ref = "main";
-		rev = "5057c410db65655cdbc52478fa0d2afbcfb7491a";
+		rev = "e1c217c7fcf13f857eb726053fb78d64f6b208fe";
+	};
+	nixos-stylus = fetchGit {
+		url = "https://github.com/typovrak/nixos-stylus.git";
+		ref = "main";
+		rev = "f1be0356af1431678e26e1201b461f4adc85a492";
 	};
 in {
 	imports = [
@@ -178,6 +183,7 @@ in {
 		(import "${nixos-bat}/configuration.nix")
 		(import "${nixos-lightdm}/configuration.nix")
 		(import "${nixos-i3}/configuration.nix")
+		(import "${nixos-stylus}/configuration.nix")
 	];
 
 	system = {
@@ -225,8 +231,6 @@ users.groups.mlocate = {};
 			fuse
 			inxi
 			wget
-			chromium
-			firefox
 			docker
 			docker-compose
 			tmux
@@ -245,6 +249,7 @@ users.groups.mlocate = {};
 			lolcat
 			ascii-image-converter
 			mlocate
+			pciutils
 		];
 	};
 
