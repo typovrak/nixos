@@ -124,7 +124,7 @@ let
   	nixos-fastfetch = fetchGit {
     	url = "https://github.com/typovrak/nixos-fastfetch.git";
     	ref = "main";
-    	rev = "b13cf6af53fd9df69d46ef9f55997e0888ba6fd0";
+    	rev = "0de88e5016970681a82ce2b07966a2fac9a36d33";
   	};
   	nixos-locale = fetchGit {
     	url = "https://github.com/typovrak/nixos-locale.git";
@@ -154,6 +154,7 @@ let
 in {
   	imports = [
     	/etc/nixos/hardware-configuration.nix
+		/etc/nixos/variables.nix
     	(import "${nixos-locale}/configuration.nix")
     	(import "${nixos-projects}/configuration.nix")
     	(import "${nixos-zsh}/configuration.nix")
@@ -202,13 +203,17 @@ in {
 
 	nixpkgs.config.allowUnfree = true;
 
-	users.users.typovrak = {
-		isNormalUser = true;
-    	description = "typovrak";
-    	extraGroups = [ "networkmanager" "wheel" "audio" ];
+	users = {
+		users.typovrak = {
+			isNormalUser = true;
+    		extraGroups = [
+				"networkmanager"
+				"wheel"
+				"audio"
+			];
+		};
+  		groups.mlocate = {};
   	};
-
-  	users.groups.mlocate = { };
 
   	environment = {
     	systemPackages = with pkgs; [
