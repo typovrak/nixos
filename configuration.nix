@@ -54,7 +54,7 @@ let
   	nixos-nvim = fetchGit {
     	url = "https://github.com/typovrak/nixos-nvim.git";
     	ref = "main";
-    	rev = "cb99220a7c781fd44875ff4c3cddd22fc7727bca";
+    	rev = "eea0e1d5fb671859b6729c2c788fad3d68de4eea";
   	};
   	nixos-pavucontrol = fetchGit {
     	url = "https://github.com/typovrak/nixos-pavucontrol.git";
@@ -151,6 +151,11 @@ let
     	ref = "main";
     	rev = "76462ddf0919bdfd040a3c0b06ed081879d5176b";
 	};
+	nixos-nemo = fetchGit {
+		url = "https://github.com/typovrak/nixos-nemo.git";
+		ref = "main";
+		rev = "924b68b04123a0716bcd16eaa6c329e13ec148f5";
+	};
 in {
   	imports = [
     	/etc/nixos/hardware-configuration.nix
@@ -185,6 +190,7 @@ in {
     	(import "${nixos-lightdm}/configuration.nix")
     	(import "${nixos-i3}/configuration.nix")
     	(import "${nixos-stylus}/configuration.nix")
+		(import "${nixos-nemo}/configuration.nix")
   	];
 
 	system = { stateVersion = "24.11"; };
@@ -204,7 +210,7 @@ in {
 	nixpkgs.config.allowUnfree = true;
 
 	users = {
-		users.typovrak = {
+		users.${config.username} = {
 			isNormalUser = true;
     		extraGroups = [
 				"networkmanager"
@@ -246,6 +252,7 @@ in {
       		ascii-image-converter
       		mlocate
       		pciutils
+			nodePackages.live-server
  		];
  	};
 
