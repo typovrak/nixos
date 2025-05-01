@@ -4,157 +4,157 @@ let
   	nixos-projects = fetchGit {
     	url = "https://github.com/typovrak/nixos-projects.git";
     	ref = "main";
-    	rev = "6ca4a3e430f10bfcebf5d7b8805db83cfa8986fe";
+    	rev = "23c9dcd9ffbbc805f336ae8bbdcaa94f4a1f5a00";
   	};
   	nixos-zsh = fetchGit {
     	url = "https://github.com/typovrak/nixos-zsh.git";
     	ref = "main";
-    	rev = "55181d862b8459851d8ec6b97fd48f2a8298bd4d";
+    	rev = "34913e1742030ddbf430cfab9868c67eb2cd69c2";
   	};
   	nixos-bash = fetchGit {
     	url = "https://github.com/typovrak/nixos-bash.git";
     	ref = "main";
-    	rev = "8556f10b3ac702412e62b0be69553d04105de01f";
+    	rev = "9f0bd593f9420b34881cf1fac6ca4d3630421795";
   	};
   	nixos-ssh = fetchGit {
     	url = "https://github.com/typovrak/nixos-ssh.git";
     	ref = "main";
-    	rev = "d6e3dd9221f7808180924a9cd3dfa5c663bbec4b";
+    	rev = "7095d5851c4bdd1a4551efab3997bee79d22781a";
   	};
   	nixos-git = fetchGit {
     	url = "https://github.com/typovrak/nixos-git.git";
     	ref = "main";
-    	rev = "5909c9068bd02261a2379121b85b10c6400e1238";
+    	rev = "71fdce3a6b6a4c878d99e42584e4db19dcda6c40";
   	};
   	nixos-flatpak = fetchGit {
     	url = "https://github.com/typovrak/nixos-flatpak.git";
     	ref = "main";
-    	rev = "05cb398922050615b223a96419bbba31b9ab386a";
+    	rev = "9984605d64d7b246609f162d570c6d690fe627fc";
   	};
   	nixos-fonts = fetchGit {
     	url = "https://github.com/typovrak/nixos-fonts.git";
     	ref = "main";
-    	rev = "e6b92fa59d87783c2bfc9d2ccd4acb3c025cda6a";
+    	rev = "43513a4e417ee857232c4e0125832457a411d380";
   	};
   	nixos-gtk = fetchGit {
     	url = "https://github.com/typovrak/nixos-gtk.git";
     	ref = "main";
-    	rev = "610c7f6912961adadd9471d19db8eeb6f7a27f50";
+    	rev = "25e45018140e7b56a3b091a2c4fc371aca5a136b";
   	};
   	nixos-alacritty = fetchGit {
     	url = "https://github.com/typovrak/nixos-alacritty.git";
     	ref = "main";
-    	rev = "79ee964748b62724b05e614c9bf379786d2392e7";
+    	rev = "530cbbbe0f7fb5b7f529b417ea01756867825024";
   	};
   	nixos-polybar = fetchGit {
     	url = "https://github.com/typovrak/nixos-polybar.git";
     	ref = "main";
-    	rev = "44e2aedb84c5f724d18b99625f6eb7f2daa17788";
+    	rev = "1c2d4d039e52426cfe09f3a7b0cc4065afba8ef2";
   	};
   	nixos-nvim = fetchGit {
     	url = "https://github.com/typovrak/nixos-nvim.git";
     	ref = "main";
-    	rev = "eea0e1d5fb671859b6729c2c788fad3d68de4eea";
+    	rev = "3bf6ee38de1b60666d858fac43e1902775fe438a";
   	};
   	nixos-pavucontrol = fetchGit {
     	url = "https://github.com/typovrak/nixos-pavucontrol.git";
     	ref = "main";
-    	rev = "b4a9c5893dc9b25a133c3170182ef92a89defb82";
+    	rev = "10864bd78c46762cadf16764c2329142654fa643";
   	};
   	nixos-neofetch = fetchGit {
     	url = "https://github.com/typovrak/nixos-neofetch.git";
     	ref = "main";
-    	rev = "ccbdda07415143d1b2a602f17d573b7afc217890";
+    	rev = "20b6197d3df0e45375e03ae878220bdc98519771";
   	};
   	nixos-lazygit = fetchGit {
     	url = "https://github.com/typovrak/nixos-lazygit.git";
     	ref = "main";
-    	rev = "b863a0a498b981b99bfb41c674de44ec027c4ea5";
+    	rev = "84d5cba0a647c4bd2816620cd248f7a901c6116d";
   	};
   	nixos-gh = fetchGit {
     	url = "https://github.com/typovrak/nixos-gh.git";
     	ref = "main";
-    	rev = "f94f413f175db047e5c16c71f9d44f13db7423f1";
+    	rev = "b606bc30b4730fa423bf36ea9b7c43312a720a8a";
   	};
   	nixos-i3lock-color = fetchGit {
     	url = "https://github.com/typovrak/nixos-i3lock-color.git";
     	ref = "main";
-    	rev = "acb27d6837a2c375e99f0eaf5460374fe36de851";
+    	rev = "07efd6188a4ccd1f70f0f1a45c0792be8d4f0288";
   	};
   	nixos-cava = fetchGit {
     	url = "https://github.com/typovrak/nixos-cava.git";
     	ref = "main";
-    	rev = "7c18a855ed1f52dfa39771e1ffb78d99d1851e47";
+    	rev = "18194dba5305267f9e1e6111bfe2f1daa48e5a3b";
   	};
   	nixos-screenkey = fetchGit {
     	url = "https://github.com/typovrak/nixos-screenkey.git";
     	ref = "main";
-    	rev = "52f404419c0df52dd3bcfdd302f5a85f10878f46";
+    	rev = "b3a3114bb3355ec9653ac3c91065b544704b6662";
   	};
   	nixos-htop = fetchGit {
     	url = "https://github.com/typovrak/nixos-htop.git";
     	ref = "main";
-    	rev = "8ccceef40689f4ad4e994c0a1747bb82df62bbe2";
+    	rev = "05c6c80f67769c035ea60da1a1a4171f2c18f854";
   	};
   	nixos-btop = fetchGit {
     	url = "https://github.com/typovrak/nixos-btop.git";
     	ref = "main";
-    	rev = "4ca0d01ee97a74359ddf821718f7d8f400c1bb81";
+    	rev = "b1791e8752989ef3ad9801eac469e6700512c733";
   	};
   	nixos-launchers = fetchGit {
     	url = "https://github.com/typovrak/nixos-launchers.git";
     	ref = "main";
-    	rev = "9a703b4d45d6189ded02e6b0d8ae84f92523869e";
+    	rev = "ed91e036f0e886ef97c2cc8b0cac4b3dad6d652e";
   	};
   	nixos-yazi = fetchGit {
     	url = "https://github.com/typovrak/nixos-yazi.git";
     	ref = "main";
-    	rev = "6d5c026706aa35d57c1ba50abc83ee05525ab816";
+    	rev = "4baba9b239c0edd8642a977cf6c0a66a5246e1b1";
   	};
   	nixos-ghostty = fetchGit {
     	url = "https://github.com/typovrak/nixos-ghostty.git";
     	ref = "main";
-    	rev = "843b4debfbe3c0d4b0cb76a4a000a3d2f6fe6836";
+    	rev = "c65773f29add1a1b628daa88201cd48aad853902";
   	};
   	nixos-audio = fetchGit {
     	url = "https://github.com/typovrak/nixos-audio.git";
     	ref = "main";
-    	rev = "689a7ccd5c25455f61d02636daab938bb68e4aa2";
+    	rev = "d32f4c8a19a7957c91a9cd478e92d45c00c89e73";
   	};
   	nixos-fastfetch = fetchGit {
     	url = "https://github.com/typovrak/nixos-fastfetch.git";
     	ref = "main";
-    	rev = "0de88e5016970681a82ce2b07966a2fac9a36d33";
+    	rev = "0ecefadefacbd5156375966bb21441f288072f7b";
   	};
   	nixos-locale = fetchGit {
     	url = "https://github.com/typovrak/nixos-locale.git";
     	ref = "main";
-    	rev = "d148a8f975f2a9aa5544c40525d860498e9e5af4";
+    	rev = "2eb03936d7daba2d62e78d353ce07bbdf5e8601b";
   	};
   	nixos-bat = fetchGit {
     	url = "https://github.com/typovrak/nixos-bat.git";
     	ref = "main";
-    	rev = "4f4a89ee94b19f3869c5a7b6c2f49104d3ffdf73";
+    	rev = "ca2a5ff6c6fa6d1952ab498943545f362e907859";
   	};
   	nixos-lightdm = fetchGit {
     	url = "https://github.com/typovrak/nixos-lightdm.git";
     	ref = "main";
-    	rev = "6bcb0df8ac13c7ce259f9352034d0eab3aee5d6f";
+    	rev = "64ca367679e05f097bb29a249e47aec2e74e0826";
   	};
   	nixos-i3 = fetchGit {
     	url = "https://github.com/typovrak/nixos-i3.git";
     	ref = "main";
-    	rev = "88f0ee949ac7bc702b49b877d29db5fa018a8c2a";
+    	rev = "58db545ebadf34b547823a4535c69fe184dea6be";
   	};
   	nixos-stylus = fetchGit {
     	url = "https://github.com/typovrak/nixos-stylus.git";
     	ref = "main";
-    	rev = "76462ddf0919bdfd040a3c0b06ed081879d5176b";
+    	rev = "e760d17e56fefb3a9386673c48aabbb0cd9018d2";
 	};
 	nixos-nemo = fetchGit {
 		url = "https://github.com/typovrak/nixos-nemo.git";
 		ref = "main";
-		rev = "924b68b04123a0716bcd16eaa6c329e13ec148f5";
+		rev = "4c5a2f449958144b18f0a8e6d22b5c793e23e9f5";
 	};
 in {
   	imports = [
@@ -253,6 +253,7 @@ in {
       		mlocate
       		pciutils
 			nodePackages.live-server
+			nodejs_23
  		];
  	};
 
