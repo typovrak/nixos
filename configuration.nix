@@ -9,7 +9,7 @@ let
   	nixos-zsh = fetchGit {
     		url = "https://github.com/typovrak/nixos-zsh.git";
     		ref = "main";
-    		rev = "34913e1742030ddbf430cfab9868c67eb2cd69c2";
+    		rev = "f9cd095c401ded68a3a8871478db525ab4830c33";
   	};
   	nixos-bash = fetchGit {
     		url = "https://github.com/typovrak/nixos-bash.git";
@@ -251,8 +251,9 @@ in {
       		ascii-image-converter
       		mlocate
       		pciutils
-		nodePackages.live-server
-		nodejs_23
+			nodePackages.live-server
+			nodejs_23
+			pnpm
 	];
 
  	services.printing.enable = true;
