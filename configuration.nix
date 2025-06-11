@@ -79,7 +79,7 @@ let
   	nixos-i3lock-color = fetchGit {
     		url = "https://github.com/typovrak/nixos-i3lock-color.git";
     		ref = "main";
-    		rev = "39f24e4f30e4f288ee8f9ca10774192e5f839c54";
+    		rev = "a36a98beba46998366c80c455b61df62733e6c67";
   	};
   	nixos-cava = fetchGit {
     		url = "https://github.com/typovrak/nixos-cava.git";
@@ -144,7 +144,7 @@ let
   	nixos-i3 = fetchGit {
     		url = "https://github.com/typovrak/nixos-i3.git";
     		ref = "main";
-    		rev = "58db545ebadf34b547823a4535c69fe184dea6be";
+    		rev = "39f24e4f30e4f288ee8f9ca10774192e5f839c54";
   	};
   	nixos-stylus = fetchGit {
     		url = "https://github.com/typovrak/nixos-stylus.git";
