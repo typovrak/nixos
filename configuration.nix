@@ -54,7 +54,7 @@ let
   	nixos-nvim = fetchGit {
     		url = "https://github.com/typovrak/nixos-nvim.git";
     		ref = "main";
-    		rev = "0140b692fd12329a4a4313ff0f142a40cabbbe87";
+    		rev = "20b1a57f698a9e16c8eb76b8be7900140bde4d4b";
   	};
   	nixos-pavucontrol = fetchGit {
     		url = "https://github.com/typovrak/nixos-pavucontrol.git";
@@ -79,7 +79,7 @@ let
   	nixos-i3lock-color = fetchGit {
     		url = "https://github.com/typovrak/nixos-i3lock-color.git";
     		ref = "main";
-    		rev = "07efd6188a4ccd1f70f0f1a45c0792be8d4f0288";
+    		rev = "39f24e4f30e4f288ee8f9ca10774192e5f839c54";
   	};
   	nixos-cava = fetchGit {
     		url = "https://github.com/typovrak/nixos-cava.git";
@@ -254,6 +254,7 @@ in {
 			nodePackages.live-server
 			nodejs_23
 			pnpm
+			tealdeer
 	];
 
  	services.printing.enable = true;
