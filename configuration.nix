@@ -54,7 +54,7 @@ let
   	nixos-nvim = fetchGit {
     		url = "https://github.com/typovrak/nixos-nvim.git";
     		ref = "main";
-    		rev = "c6c3a3110212e38cfc85cb2dc0206efe1a4f89a0";
+    		rev = "b80d0e920d8747a761100885abe6fa9eb8ec1573";
   	};
   	nixos-pavucontrol = fetchGit {
     		url = "https://github.com/typovrak/nixos-pavucontrol.git";
@@ -216,6 +216,7 @@ in {
 				"networkmanager"
 				"wheel"
 				"audio"
+				"docker"
 			];
 		};
   		groups.mlocate = {};
@@ -258,4 +259,6 @@ in {
 	];
 
  	services.printing.enable = true;
+
+	virtualisation.docker.enable = true;
 }
