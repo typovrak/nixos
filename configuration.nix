@@ -9,7 +9,7 @@ let
   	nixos-zsh = fetchGit {
     		url = "https://github.com/typovrak/nixos-zsh.git";
     		ref = "main";
-    		rev = "f9cd095c401ded68a3a8871478db525ab4830c33";
+    		rev = "a7a9bb65d8a650a3b754d3631f9221f0398af81a";
   	};
   	nixos-bash = fetchGit {
     		url = "https://github.com/typovrak/nixos-bash.git";
@@ -19,7 +19,7 @@ let
   	nixos-ssh = fetchGit {
     		url = "https://github.com/typovrak/nixos-ssh.git";
     		ref = "main";
-    		rev = "7095d5851c4bdd1a4551efab3997bee79d22781a";
+    		rev = "529b747b2caacbe716041e05f07c808127eb219a";
   	};
   	nixos-git = fetchGit {
     		url = "https://github.com/typovrak/nixos-git.git";
@@ -54,7 +54,7 @@ let
   	nixos-nvim = fetchGit {
     		url = "https://github.com/typovrak/nixos-nvim.git";
     		ref = "main";
-    		rev = "b80d0e920d8747a761100885abe6fa9eb8ec1573";
+    		rev = "89629ed61bc0f91c27a1b63f6df3a415f729f51f";
   	};
   	nixos-pavucontrol = fetchGit {
     		url = "https://github.com/typovrak/nixos-pavucontrol.git";
