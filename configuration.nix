@@ -19,7 +19,7 @@ let
   	nixos-ssh = fetchGit {
     		url = "https://github.com/typovrak/nixos-ssh.git";
     		ref = "main";
-    		rev = "529b747b2caacbe716041e05f07c808127eb219a";
+    		rev = "80c4b2b8d8dcb7240d58ff648d6a29a717108bc4";
   	};
   	nixos-git = fetchGit {
     		url = "https://github.com/typovrak/nixos-git.git";
