@@ -256,6 +256,7 @@ in {
 			nodejs_23
 			pnpm
 			tealdeer
+			gnumake
 	];
 
  	services.printing.enable = true;
