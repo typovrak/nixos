@@ -257,6 +257,8 @@ in {
 			pnpm
 			tealdeer
 			gnumake
+			gitleaks
+			trivy
 	];
 
  	services.printing.enable = true;
