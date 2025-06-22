@@ -54,7 +54,7 @@ let
   	nixos-nvim = fetchGit {
     		url = "https://github.com/typovrak/nixos-nvim.git";
     		ref = "main";
-    		rev = "89629ed61bc0f91c27a1b63f6df3a415f729f51f";
+    		rev = "0b7d2e7b99b7d87d7bec04e74de40b153973b78e";
   	};
   	nixos-pavucontrol = fetchGit {
     		url = "https://github.com/typovrak/nixos-pavucontrol.git";
@@ -259,6 +259,7 @@ in {
 			gnumake
 			gitleaks
 			trivy
+			dive
 	];
 
  	services.printing.enable = true;
