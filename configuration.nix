@@ -260,6 +260,7 @@ in {
 			gitleaks
 			trivy
 			dive
+			calc
 	];
 
  	services.printing.enable = true;
