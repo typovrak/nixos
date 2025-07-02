@@ -89,7 +89,7 @@ let
   	nixos-screenkey = fetchGit {
     		url = "https://github.com/typovrak/nixos-screenkey.git";
     		ref = "main";
-    		rev = "421febda006fc285b87cb5ef8f0724bf45527dcc";
+    		rev = "adc15b149bfa53afa71e05c58cff8dd7d547f705";
   	};
   	nixos-htop = fetchGit {
     		url = "https://github.com/typovrak/nixos-htop.git";
