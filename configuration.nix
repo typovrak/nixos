@@ -163,8 +163,8 @@ let
 	};
 in {
   	imports = [
-		/etc/nixos/hardware-configuration.nix
-		/etc/nixos/variables.nix
+			./hardware-configuration.nix
+			./variables.nix
     		(import "${nixos-locale}/configuration.nix")
     		(import "${nixos-projects}/configuration.nix")
     		(import "${nixos-zsh}/configuration.nix")
