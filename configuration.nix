@@ -54,7 +54,7 @@ let
   	nixos-nvim = fetchGit {
     		url = "https://github.com/typovrak/nixos-nvim.git";
     		ref = "main";
-    		rev = "0b7d2e7b99b7d87d7bec04e74de40b153973b78e";
+    		rev = "093899bfa3e00071da2b2e59b08f9d3a72002f82";
   	};
   	nixos-pavucontrol = fetchGit {
     		url = "https://github.com/typovrak/nixos-pavucontrol.git";
@@ -156,6 +156,11 @@ let
 		ref = "main";
 		rev = "4c5a2f449958144b18f0a8e6d22b5c793e23e9f5";
 	};
+	nixos-zellij = fetchGit {
+		url = "https://github.com/typovrak/nixos-zellij.git";
+		ref = "main";
+		rev = "7b8d45de50c69ff9433bcb33c57419c6721844aa";
+	};
 in {
   	imports = [
 		/etc/nixos/hardware-configuration.nix
@@ -190,7 +195,8 @@ in {
     		(import "${nixos-lightdm}/configuration.nix")
     		(import "${nixos-i3}/configuration.nix")
     		(import "${nixos-stylus}/configuration.nix")
-		(import "${nixos-nemo}/configuration.nix")
+			(import "${nixos-nemo}/configuration.nix")
+			(import "${nixos-zellij}/configuration.nix")
   	];
 
 	system = { stateVersion = "24.11"; };
@@ -261,6 +267,7 @@ in {
 			trivy
 			dive
 			calc
+			zellij
 	];
 
  	services.printing.enable = true;
