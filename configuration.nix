@@ -19,12 +19,12 @@ let
   	nixos-ssh = fetchGit {
     		url = "https://github.com/typovrak/nixos-ssh.git";
     		ref = "main";
-    		rev = "80c4b2b8d8dcb7240d58ff648d6a29a717108bc4";
+    		rev = "0fa4d7bd59e31f99c3f500d548cbc7e3e72a71fd";
   	};
   	nixos-git = fetchGit {
     		url = "https://github.com/typovrak/nixos-git.git";
     		ref = "main";
-    		rev = "71fdce3a6b6a4c878d99e42584e4db19dcda6c40";
+    		rev = "0cb605b36d852d09b56fd83f23cdc94274a4864a";
   	};
   	nixos-flatpak = fetchGit {
     		url = "https://github.com/typovrak/nixos-flatpak.git";
