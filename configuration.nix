@@ -268,6 +268,7 @@ in {
 			dive
 			calc
 			zellij
+			wdiff
 	];
 
  	services.printing.enable = true;
