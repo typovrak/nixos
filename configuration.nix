@@ -9,7 +9,7 @@ let
   	nixos-zsh = fetchGit {
     		url = "https://github.com/typovrak/nixos-zsh.git";
     		ref = "main";
-    		rev = "a7a9bb65d8a650a3b754d3631f9221f0398af81a";
+    		rev = "f5700f5a923ab91543817ac769d8a7a6c83eac78";
   	};
   	nixos-bash = fetchGit {
     		url = "https://github.com/typovrak/nixos-bash.git";
