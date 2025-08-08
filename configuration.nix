@@ -19,12 +19,12 @@ let
   	nixos-ssh = fetchGit {
     		url = "https://github.com/typovrak/nixos-ssh.git";
     		ref = "main";
-    		rev = "0fa4d7bd59e31f99c3f500d548cbc7e3e72a71fd";
+    		rev = "21357c7e08a295cc55e88ad16085dc47a97efe32";
   	};
   	nixos-git = fetchGit {
     		url = "https://github.com/typovrak/nixos-git.git";
     		ref = "main";
-    		rev = "3588035d9654e4893cf6c6016b19ea469e73a9f8";
+    		rev = "116cc93e46179d071366fd445e10b5774cc0eff4";
   	};
   	nixos-flatpak = fetchGit {
     		url = "https://github.com/typovrak/nixos-flatpak.git";
@@ -269,6 +269,7 @@ in {
 			calc
 			zellij
 			wdiff
+			insomnia
 	];
 
  	services.printing.enable = true;
