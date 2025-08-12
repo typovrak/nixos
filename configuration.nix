@@ -24,7 +24,7 @@ let
   	nixos-git = fetchGit {
     		url = "https://github.com/typovrak/nixos-git.git";
     		ref = "main";
-    		rev = "116cc93e46179d071366fd445e10b5774cc0eff4";
+    		rev = "3331972f03dbc4571ff8ebcfbd10e5862bf553d2";
   	};
   	nixos-flatpak = fetchGit {
     		url = "https://github.com/typovrak/nixos-flatpak.git";
