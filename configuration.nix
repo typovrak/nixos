@@ -9,7 +9,7 @@ let
   	nixos-zsh = fetchGit {
     		url = "https://github.com/typovrak/nixos-zsh.git";
     		ref = "main";
-    		rev = "f5700f5a923ab91543817ac769d8a7a6c83eac78";
+    		rev = "074eb14b333d8aac057c182d2e0d7cb7818c507d";
   	};
   	nixos-bash = fetchGit {
     		url = "https://github.com/typovrak/nixos-bash.git";
@@ -270,7 +270,6 @@ in {
 			zellij
 			wdiff
 			insomnia
-			pipx
 	];
 
  	services.printing.enable = true;
