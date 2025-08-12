@@ -270,6 +270,7 @@ in {
 			zellij
 			wdiff
 			insomnia
+			pipx
 	];
 
  	services.printing.enable = true;
