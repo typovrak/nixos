@@ -270,6 +270,7 @@ in {
 			zellij
 			wdiff
 			insomnia
+			zip
 	];
 
  	services.printing.enable = true;
