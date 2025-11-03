@@ -271,7 +271,6 @@ in {
 			wdiff
 			insomnia
 			zip
-			supabase-cli
 	];
 
  	services.printing.enable = true;
