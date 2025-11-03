@@ -9,7 +9,7 @@ let
   	nixos-zsh = fetchGit {
     		url = "https://github.com/typovrak/nixos-zsh.git";
     		ref = "main";
-    		rev = "074eb14b333d8aac057c182d2e0d7cb7818c507d";
+    		rev = "9c84757d6634e6e30b838da26f559b6016c0e51c";
   	};
   	nixos-bash = fetchGit {
     		url = "https://github.com/typovrak/nixos-bash.git";
@@ -271,6 +271,7 @@ in {
 			wdiff
 			insomnia
 			zip
+			supabase-cli
 	];
 
  	services.printing.enable = true;
