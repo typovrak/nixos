@@ -271,6 +271,8 @@ in {
 			wdiff
 			insomnia
 			zip
+			zed-editor
+			code-cursor
 	];
 
  	services.printing.enable = true;
