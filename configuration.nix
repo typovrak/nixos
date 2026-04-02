@@ -215,6 +215,15 @@ in {
 
 	nixpkgs.config.allowUnfree = true;
 
+	hardware = {
+		graphics.enable = true;
+		nvidia = {
+			modesetting.enable = true;
+			open = lib.mkForce true;
+			nvidiaSettings = true;
+		};
+	};
+
 	users = {
 		users.${config.username} = {
 			isNormalUser = true;
@@ -273,9 +282,14 @@ in {
 			zip
 			zed-editor
 			code-cursor
+			davinci-resolve
+			ffmpeg
 	];
 
- 	services.printing.enable = true;
+ 	services = {
+		printing.enable = true;
+		xserver.videoDrivers = [ "nvidia" ];
+	};
 
 	virtualisation.docker.enable = true;
 }
