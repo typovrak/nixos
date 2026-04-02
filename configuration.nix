@@ -144,7 +144,7 @@ let
   	nixos-i3 = fetchGit {
     		url = "https://github.com/typovrak/nixos-i3.git";
     		ref = "main";
-    		rev = "39f24e4f30e4f288ee8f9ca10774192e5f839c54";
+    		rev = "b6ecf50c0ddc9ad3c412959d12077948650728f4";
   	};
   	nixos-stylus = fetchGit {
     		url = "https://github.com/typovrak/nixos-stylus.git";
