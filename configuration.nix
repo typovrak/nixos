@@ -9,7 +9,7 @@ let
   	nixos-zsh = fetchGit {
     		url = "https://github.com/typovrak/nixos-zsh.git";
     		ref = "main";
-    		rev = "9c84757d6634e6e30b838da26f559b6016c0e51c";
+    		rev = "0077cdcbe19b84c3dcacd45a14532f5db450e8ee";
   	};
   	nixos-bash = fetchGit {
     		url = "https://github.com/typovrak/nixos-bash.git";
@@ -34,7 +34,7 @@ let
   	nixos-fonts = fetchGit {
     		url = "https://github.com/typovrak/nixos-fonts.git";
     		ref = "main";
-    		rev = "43513a4e417ee857232c4e0125832457a411d380";
+    		rev = "8846a7acbcac0e455e0980e57681b56c2f3a0b93";
   	};
   	nixos-gtk = fetchGit {
     		url = "https://github.com/typovrak/nixos-gtk.git";
@@ -60,11 +60,6 @@ let
     		url = "https://github.com/typovrak/nixos-pavucontrol.git";
     		ref = "main";
     		rev = "10864bd78c46762cadf16764c2329142654fa643";
-  	};
-  	nixos-neofetch = fetchGit {
-    		url = "https://github.com/typovrak/nixos-neofetch.git";
-    		ref = "main";
-    		rev = "20b6197d3df0e45375e03ae878220bdc98519771";
   	};
   	nixos-lazygit = fetchGit {
     		url = "https://github.com/typovrak/nixos-lazygit.git";
@@ -119,7 +114,7 @@ let
   	nixos-audio = fetchGit {
     		url = "https://github.com/typovrak/nixos-audio.git";
     		ref = "main";
-    		rev = "d32f4c8a19a7957c91a9cd478e92d45c00c89e73";
+    		rev = "e1ba5916d79fe33d49bd4c9d1a576284f447d3e8";
   	};
   	nixos-fastfetch = fetchGit {
     		url = "https://github.com/typovrak/nixos-fastfetch.git";
@@ -139,12 +134,12 @@ let
   	nixos-lightdm = fetchGit {
     		url = "https://github.com/typovrak/nixos-lightdm.git";
     		ref = "main";
-    		rev = "64ca367679e05f097bb29a249e47aec2e74e0826";
+    		rev = "aacd791fb451231da52911aff7d8cb7e0b4ed8b5";
   	};
   	nixos-i3 = fetchGit {
     		url = "https://github.com/typovrak/nixos-i3.git";
     		ref = "main";
-    		rev = "b6ecf50c0ddc9ad3c412959d12077948650728f4";
+    		rev = "23e0bf23f4252c56747e4107d732376498bccce1";
   	};
   	nixos-stylus = fetchGit {
     		url = "https://github.com/typovrak/nixos-stylus.git";
@@ -178,7 +173,6 @@ in {
     		(import "${nixos-polybar}/configuration.nix")
     		(import "${nixos-nvim}/configuration.nix")
     		(import "${nixos-pavucontrol}/configuration.nix")
-    		(import "${nixos-neofetch}/configuration.nix")
     		(import "${nixos-lazygit}/configuration.nix")
     		(import "${nixos-gh}/configuration.nix")
     		(import "${nixos-i3lock-color}/configuration.nix")
@@ -219,7 +213,7 @@ in {
 		graphics.enable = true;
 		nvidia = {
 			modesetting.enable = true;
-			open = lib.mkForce true;
+			open = false;
 			nvidiaSettings = true;
 		};
 	};
@@ -253,7 +247,6 @@ in {
       		tmux
       		gdu
       		fzf
-      		rpi-imager
       		filezilla
       		gedit
       		vscode
@@ -267,8 +260,8 @@ in {
       		ascii-image-converter
       		mlocate
       		pciutils
-			nodePackages.live-server
-			nodejs_23
+			live-server
+			nodejs_24
 			pnpm
 			tealdeer
 			gnumake
