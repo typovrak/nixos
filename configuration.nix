@@ -114,7 +114,7 @@ let
   	nixos-audio = fetchGit {
     		url = "https://github.com/typovrak/nixos-audio.git";
     		ref = "main";
-    		rev = "78d2d258d33eb60e0a8a16c87a672608f35c1859";
+    		rev = "1772380088567bdd610f90b6fb99486951ce9bff";
   	};
   	nixos-fastfetch = fetchGit {
     		url = "https://github.com/typovrak/nixos-fastfetch.git";
@@ -139,7 +139,7 @@ let
   	nixos-i3 = fetchGit {
     		url = "https://github.com/typovrak/nixos-i3.git";
     		ref = "main";
-    		rev = "23e0bf23f4252c56747e4107d732376498bccce1";
+    		rev = "cb14880766c1bf7d3423301e4c50101d9453fa7b";
   	};
   	nixos-stylus = fetchGit {
     		url = "https://github.com/typovrak/nixos-stylus.git";
@@ -242,7 +242,7 @@ in {
       		fuse
       		inxi
       		wget
-      		docker
+      		docker_29
       		docker-compose
       		tmux
       		gdu
@@ -284,5 +284,8 @@ in {
 		xserver.videoDrivers = [ "nvidia" ];
 	};
 
-	virtualisation.docker.enable = true;
+	virtualisation.docker = {
+		package = pkgs.docker_29;
+		enable = true;
+	};
 }
