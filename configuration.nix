@@ -114,7 +114,7 @@ let
   	nixos-audio = fetchGit {
     		url = "https://github.com/typovrak/nixos-audio.git";
     		ref = "main";
-    		rev = "e1ba5916d79fe33d49bd4c9d1a576284f447d3e8";
+    		rev = "78d2d258d33eb60e0a8a16c87a672608f35c1859";
   	};
   	nixos-fastfetch = fetchGit {
     		url = "https://github.com/typovrak/nixos-fastfetch.git";
