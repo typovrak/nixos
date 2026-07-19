@@ -1,37 +1,39 @@
-# 🔐 Security Policy
+# 🔐 Security policy
 
 > "Given enough eyeballs, all bugs are shallow."
 > — Linus Torvalds
 
-## 🛡️ Supported Versions
+## 🛡️ Supported versions
 
-The following versions of this project are currently supported with security updates :
+This is a rolling NixOS configuration. Only the latest `main`, tracking the
+current stable NixOS release, receives security fixes.
 
-| Version | Supported |
-| ------- | --------- |
-| 1.x     | ✅        |
+| NixOS release | Supported |
+| ------------- | --------- |
+| 26.05 (main)  | ✅        |
+| older         | ❌        |
 
-## ⚠️ Reporting a Vulnerability
+## ⚠️ Reporting a vulnerability
 
-If you discover a security vulnerability, please **do not** disclose it publicly until it is resolved. Instead, report it privately via one of these channels :
-- **Email :** [typovrak@gmail.com](mailto:typovrak@gmail.com)
-- Private GitHub issue (if enabled).
-- Direct message to the project maintainer on GitHub.
+Please **do not** disclose security issues publicly or open a public issue.
+Report privately through one of these channels :
 
-## 📋 What to Include
+- **GitHub (preferred)** : use *Report a vulnerability* in the repository's
+  **Security** tab to open a private security advisory.
+- **Email** : [typovrak@gmail.com](mailto:typovrak@gmail.com)
 
-When reporting a vulnerability, please provide :
+## 📋 What to include
+
 - A clear description of the issue.
 - Steps to reproduce (minimal reproduction if possible).
 - Potential impact and severity.
-- Any suggested fixes or mitigations.
+- Any suggested fix or mitigation.
 
-## ⏳ Response Process
+## ⏳ Response process
 
 1. **Acknowledgment** within 48 hours of receipt.
-2. **Assessment & fix** timeline based on severity (typically within 14–30 days).
+2. **Assessment & fix** based on severity (typically 14–30 days).
 3. **Credit** for the discovery, unless anonymity is requested.
 
 ---
-
 <p align="center"><i>💜 Thank you for helping keep this project and its users safe !</i></p>
