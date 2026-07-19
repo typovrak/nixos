@@ -1,8 +1,5 @@
 blank_issues_enabled: false
 contact_links:
-  - name: 🔐 Report a security vulnerability
-    url: https://github.com/typovrak/nixos/security/advisories/new
-    about: Please report vulnerabilities privately, never in a public issue.
-  - name: 🤝 Code of conduct concern
-    url: mailto:typovrak@gmail.com
-    about: Report conduct issues privately by email.
+  - name: Report a code of conduct concern
+    url: https://github.com/typovrak/nixos/blob/main/.github/CODE_OF_CONDUCT.md#-reporting-issues
+    about: Please report conduct issues privately. See our code of conduct.
