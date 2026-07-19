@@ -18,13 +18,18 @@ The following behaviors are not tolerated :
 - Public or private threats, intimidation or stalking.
 - Sharing private or sensitive information without consent.
 
-## 🚨 Reporting Issues
+## 🚨 Reporting issues
 
-If you encounter harassment or any conduct that makes you uncomfortable, please report it to the maintainers :
-- **Email :** [typovrak@gmail.com](mailto:typovrak@gmail.com)  
-- **GitHub :** Open a private issue if available or send a direct message to a project maintainer.
+If you encounter harassment or any conduct that makes you uncomfortable,
+please report it privately to the maintainer :
 
-Reports are kept confidential. We commit to responding within 48 hours and addressing concerns fairly.
+- **Email** : typovrak@gmail.com
+
+Please do **not** open a public issue for conduct reports, to protect the
+privacy of everyone involved.
+
+Reports are kept confidential. We commit to responding within 48 hours and
+addressing concerns fairly.
 
 ---
 
