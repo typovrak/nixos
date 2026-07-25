@@ -21,7 +21,7 @@ The following behaviors are not tolerated :
 ## 🚨 Reporting issues
 
 If you encounter harassment or any conduct that makes you uncomfortable,
-please report it privately to the maintainer :
+please report it privately to the maintainer:
 
 - **Email** : typovrak@gmail.com
 
