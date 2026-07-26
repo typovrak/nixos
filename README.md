@@ -3,6 +3,10 @@
 [![Portal](https://img.shields.io/badge/Portal-typovrak.tv%2Fnixos-eba0ac?labelColor=45475a)](https://typovrak.tv/nixos)
 [![Discord join us](https://img.shields.io/badge/Discord-Join%20us-74c7ec?labelColor=45475a&logo=discord&logoColor=white)](https://typovrak.tv/discord)
 
+<div>
+  <a href="https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2Ftypovrak%2Fnixos"><img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Ftypovrak%2Fnixos&label=GET%20https%3A%2F%2Fgithub.com%2Ftypovrak%2Fnixos&labelColor=%23a6e3a1&countColor=%231e1e2e" /></a>
+</div>
+
 # 💜 Nixos
 
 > Complete, modular NixOS setup covering shell, GUI, development tools, window manager, audio, fonts, theming and more.
