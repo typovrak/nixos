@@ -16,7 +16,7 @@ current stable NixOS release, receives security fixes.
 ## ⚠️ Reporting a vulnerability
 
 Please **do not** disclose security issues publicly or open a public issue.
-Report privately through one of these channels :
+Report privately through one of these channels:
 
 - **GitHub (preferred)** : use *Report a vulnerability* in the repository's
   **Security** tab to open a private security advisory.
