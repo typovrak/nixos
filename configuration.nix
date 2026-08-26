@@ -288,4 +288,7 @@ in {
 		package = pkgs.docker_29;
 		enable = true;
 	};
+
+	zramSwap.enable = true;
+	systemd.oomd.enable = true;
 }
