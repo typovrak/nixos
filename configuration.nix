@@ -277,6 +277,7 @@ in {
 			code-cursor
 			davinci-resolve
 			ffmpeg
+			claude-code
 	];
 
  	services = {
