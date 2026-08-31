@@ -279,6 +279,7 @@ in {
 			davinci-resolve
 			ffmpeg
 			claude-code
+			asciinema
 	];
 
  	services = {
