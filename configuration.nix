@@ -280,6 +280,7 @@ in {
 			ffmpeg
 			claude-code
 			asciinema
+			railway
 	];
 
  	services = {
