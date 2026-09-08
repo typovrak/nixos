@@ -281,6 +281,7 @@ in {
 			claude-code
 			asciinema
 			railway
+			stripe-cli
 	];
 
  	services = {
