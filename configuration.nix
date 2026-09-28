@@ -109,7 +109,7 @@ let
   	nixos-ghostty = fetchGit {
     		url = "https://github.com/typovrak/nixos-ghostty.git";
     		ref = "main";
-    		rev = "c65773f29add1a1b628daa88201cd48aad853902";
+    		rev = "c98b721918777e86cfd9279523a97ae56af6214f";
   	};
   	nixos-audio = fetchGit {
     		url = "https://github.com/typovrak/nixos-audio.git";
