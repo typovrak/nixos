@@ -2,10 +2,7 @@ blank_issues_enabled: false
 contact_links:
   - name: 💬 Question or setup help
     url: https://typovrak.tv/discord
-    about: Ask in the #nixos-setup channel on Discord.
-  - name: 🔐 Security vulnerability
-    url: https://github.com/typovrak/nixos/security/advisories/new
-    about: Report it privately. Never open a public issue for a vulnerability.
+    about: "Ask in the #nixos-setup channel on Discord."
   - name: 🚨 Code of conduct concern
     url: https://github.com/typovrak/nixos/blob/main/.github/CODE_OF_CONDUCT.md#-reporting-issues
     about: Report conduct issues privately. See the code of conduct.
