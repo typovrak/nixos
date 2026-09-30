@@ -1,0 +1,21 @@
+name: ✨ Feature request
+description: A new option, package or behavior.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: use-case
+    attributes:
+      label: What do you want to do?
+      description: Start with the use case, then the change you have in mind.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: A Nix snippet, a package name or a screenshot of the result you want.
+  - type: textarea
+    id: workarounds
+    attributes:
+      label: What you tried
+      description: Workarounds, or other modules and dotfiles you looked at.

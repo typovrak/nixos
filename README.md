@@ -28,12 +28,12 @@ This repository is the entry point of ```Typovrak NixOS```, a modular and declar
 - 🚀 **Modular configuration:** each component (shell, editor, WM, audio, etc.) lives in its own reusable Nix module.
 - 🔒 **Secure configs:** automatically creates and locks down ```~/.config/*``` with correct ownership and permissions.
 - 🐚 **Shells:** zsh (with autosuggestions and syntax highlighting) and bash, set up out of the box.
-- 🐙 **Git tooling:** Git, GitHub CLI & LazyGit with your ```.gitconfig``` deployed and ready.
+- 🐙 **Git tooling:** Git, GitHub CLI & LazyGit with your ```.gitconfig``` deployed.
 - 🎨 **Theming:** Catppuccin Mocha green applied to GTK2/3/4, Alacritty, i3, Polybar & cursors.
 - 🖥️ **Window manager:** i3wm + Polybar + LightDM GTK greeter with custom wallpaper.
 - 🔤 **Fonts & emoji:** JetBrainsMono Nerd Font + Noto Emoji for complete glyph coverage.
 - 🎬 **Multimedia:** PipeWire audio stack, pavucontrol, CAVA visualizer & screenkey.
-- 📊 **Monitoring:** htop, btop & Fastfetch with tuned defaults.
+- 📊 **Monitoring:** htop, btop & Fastfetch, each with its own config file.
 - 💻 **Dev stack:** Node.js, TypeScript, Go, Rust, Python, Ruby, Docker, plus CLI tools like ```ripgrep```, ```fd```, ```fzf``` and ```jq```.
 - 📂 **Project workspace:** automatically creates the ```~/projects``` directory.
 - 🌐 **Flatpak support:** Flathub enabled and OBS Studio auto-installed.
@@ -164,11 +164,11 @@ sudo nixos-rebuild switch
 
 [typovrak.tv/nixos](https://typovrak.tv/nixos) is a Catppuccin Mocha green portal to my GitHub and NixOS setup.
 
-It lists every module, example and config in an interactive interface that looks like the desktop this configuration sets up.
+It lists every module, example and config in an interactive interface that looks like the Typovrak NixOS desktop.
 
 ## ❤️ Support
 
-If this configuration saved you time, please ⭐️ the repo and share feedback.
+If this project saved you time, please ⭐️ the repo and share feedback. To contribute, start with [CONTRIBUTING.md](.github/CONTRIBUTING.md).
 
 ## 💬 Join the Typovrak community on Discord 🇫🇷
 

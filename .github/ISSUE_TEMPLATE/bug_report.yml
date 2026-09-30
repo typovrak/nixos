@@ -1,0 +1,44 @@
+name: 🐛 Bug report
+description: The rebuild fails, or something breaks after switching.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For setup questions, ask in `#nixos-setup` on [Discord](https://typovrak.tv/discord) instead.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you did, what you expected and what you got instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Import the module in configuration.nix
+        2. Run sudo nixos-rebuild switch
+        3. Open a new terminal
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error output
+      description: The relevant part of the `nixos-rebuild` output, or of `journalctl -b` for runtime errors.
+      render: shell
+  - type: input
+    id: nixos-version
+    attributes:
+      label: NixOS version
+      description: Output of `nixos-version`.
+      placeholder: 26.05.4659.8f0500b96605
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Commit
+      description: The `rev` from your `fetchGit` entry, or `git rev-parse --short HEAD` in your clone.
