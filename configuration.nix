@@ -156,6 +156,11 @@ let
 		ref = "main";
 		rev = "7b8d45de50c69ff9433bcb33c57419c6721844aa";
 	};
+	nixos-ccburn = fetchGit {
+		url = "https://github.com/typovrak/nixos-ccburn.git";
+		ref = "main";
+		rev = "84542b289b6e9fb5fa431ff3a1002d4690e7d364";
+	};
 in {
   	imports = [
 			/etc/nixos/hardware-configuration.nix
@@ -191,6 +196,7 @@ in {
     		(import "${nixos-stylus}/configuration.nix")
 			(import "${nixos-nemo}/configuration.nix")
 			(import "${nixos-zellij}/configuration.nix")
+			(import "${nixos-ccburn}/configuration.nix")
   	];
 
 	system = { stateVersion = "24.11"; };
