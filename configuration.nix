@@ -282,6 +282,7 @@ in {
 			asciinema
 			railway
 			stripe-cli
+			claude-monitor
 	];
 
  	services = {
