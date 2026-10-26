@@ -289,6 +289,7 @@ in {
 			railway
 			stripe-cli
 			claude-monitor
+			visidata
 	];
 
  	services = {
